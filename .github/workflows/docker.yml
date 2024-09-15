@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: 构建镜像
+      - name: 构建镜像并推送到dockerhub
         uses: docker/build-push-action@v5
         with:
           push: true # 推送镜像到dockerhub
