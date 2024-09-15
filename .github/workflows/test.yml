@@ -19,7 +19,7 @@ jobs: # 任务集
           npm run build
 
       - name: 部署
-      - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
         with:
           branch: gh-pages # 部署分支
           folder: build # 打包后的文件目录
