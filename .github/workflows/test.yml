@@ -16,9 +16,11 @@ jobs: # 任务集
         run: | #合并多行命令
           npm install
           npm run build
-#
-#      - name: 部署
-#      - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
-#        with:
-#          branch: gh-pages # 部署分支
-#          folder: build # 打包后的文件目录
+          export NODE_OPTIONS=--openssl-legacy-provider
+
+
+      - name: 部署
+      - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
+        with:
+          branch: gh-pages # 部署分支
+          folder: build # 打包后的文件目录
