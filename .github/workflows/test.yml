@@ -1,0 +1,22 @@
+name: usercenter-test cicd测试
+on: push # 事件出发条件
+
+permissions: # 权限
+  contents: read # 读取仓库内容
+
+jobs: # 任务集
+  runs-on: windows-latest # 系统运行环境
+  steps:
+    - name: 读取仓库内容
+      uses: actions/checkout@v2 # 克隆代码
+
+    - name: 安装依赖&项目打包
+      run: | #合并多行命令
+        npm install
+        npm run build
+
+    - name: 部署
+    - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
+      with:
+        branch: gh-pages # 部署分支
+        folder: build # 打包后的文件目录
