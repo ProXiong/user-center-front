@@ -24,5 +24,5 @@ jobs: # 任务集
         uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
         with:
           branch: gh-pages # 部署分支
-          folder: user-center-frontend/dist # 打包后的文件目录
+          folder: dist # build构建后的文件目录
           token: ${{ secrets.GITHUB_TOKEN }} # 令牌
