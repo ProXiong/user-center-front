@@ -12,15 +12,19 @@ jobs: # 任务集
       - name: 读取仓库内容
         uses: actions/checkout@v4 # 克隆代码
 
+      - name: #取消数据签名认证
+          run: |
+            export NODE_OPTIONS=--openssl-legacy-provider
+
       - name: 安装依赖&项目打包
         run: | #合并多行命令
           npm install
           npm run build
-          export NODE_OPTIONS=--openssl-legacy-provider
 
 
-      - name: 部署
-      - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
-        with:
-          branch: gh-pages # 部署分支
-          folder: build # 打包后的文件目录
+
+#      - name: 部署
+#      - uses: JamesIves/github-pages-deploy-action@4.1.5 # 部署到github pages
+#        with:
+#          branch: gh-pages # 部署分支
+#          folder: build # 打包后的文件目录
