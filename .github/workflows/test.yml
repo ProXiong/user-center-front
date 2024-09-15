@@ -5,7 +5,7 @@ permissions: # 权限
   contents: read # 读取仓库内容
 
 jobs: # 任务集
-  runs-on: windows-latest # 系统运行环境
+  runs-on: ubuntu-latest # 系统运行环境
   steps:
     - name: 读取仓库内容
       uses: actions/checkout@v2 # 克隆代码
