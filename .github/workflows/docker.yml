@@ -17,6 +17,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: 构建镜像
+        uses: docker/build-push-action@v5
         with:
           push: true # 推送镜像到dockerhub
           tags: proquan/test:latest # 镜像名称
